@@ -3,7 +3,7 @@
 
 <div id="burgers">
     <ul>
-        {{#each burgers}} {{unless this.devoured}}
+        {{#each burgers}} {{#unless this.devoured}}
         <li>
             {{this.id}}. {{this.burger_name}}
 
