@@ -12,19 +12,19 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
+router.post("/api/burger", (req, res) => {
+  console.log(req);
   burger.insertOne(req.body.burger_name, () => {
     res.redirect("/");
   });
 });
 
-router.put("/:id", (req, res) => {
-  const id = req.params.id;
-
-  console.log("id", id);
-
-  burger.updateOne(id, () => {
-    res.redirect("/");
+router.put("/api/burger/:id", (req, res) => {
+  console.log(req);
+  const response = db.update(req.params.id);
+  console.log(response);
+  res.json({
+    status: 200,
   });
 });
 

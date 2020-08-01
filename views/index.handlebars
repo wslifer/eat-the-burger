@@ -4,16 +4,14 @@
 <div class="mr-4" id="burgers">
     <ul class="list-group justify-content-start">
     <h3>Burgers to be Devoured</h3>
-        {{#each burgers}} {{#unless this.devoured}}
-        <li class="ml-3">
+        {{#each burgers}} 
+         {{#unless this.devoured}}
+        <li class="ml-3 mb-2">
             {{this.id}}. {{this.burger_name}}
-
-            <form action='/{{this.id}}?_method=PUT' method="POST">
-            <input type="hidden" name="devoured" value="false">
-            <button class="btn btn-info" type="submit">Inhale this burger</button>
-            </form>
+            <button class="btn btn-info eat-btn" type="submit">Inhale this burger</button>
         </li>
-        {{/unless}} {{/each}}
+         {{/unless}} 
+        {{/each}}
     </ul>
 </div>
 
@@ -30,13 +28,13 @@
 </div>
 
 
-<div id="add">
+<div >
     <h2 class="text-center">Cook a new burger</h2>
     <h3 class="text-center">Enter a burger you want to make, then click the Submit button!</h3>
     <form class="create-form row justify-content-center">
         <div class="form-group col-6 text-center">
             <textarea class="form-control row mb-3" name="add-burger" id="add-burger" cols="30" rows="3"></textarea>
-            <button class="btn btn-info row mb-3" type="submit">Submit</button>
+            <button class="btn btn-info row mb-3" type="submit" id="addBurger">Submit</button>
             
         </div>
     </form>
